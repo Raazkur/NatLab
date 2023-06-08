@@ -1,4 +1,4 @@
-navigator.mediaDevices.getUserMedia({ video: { facingMode: 'user' } })
+navigator.mediaDevices.getUserMedia({ video: { facingMode: 'enviorment' } })
   .then(function (stream) {
     var videoElement = document.getElementById('videoElement');
     videoElement.srcObject = stream;
