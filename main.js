@@ -8,7 +8,7 @@ navigator.mediaDevices.enumerateDevices()
       navigator.mediaDevices.getUserMedia({ video: { deviceId: backCamera.deviceId } })
         .then(function(stream) {
           var videoElement = document.getElementById('videoElement');
-          videoElement.srcObject = stream;
+          videoElement.srcObject = invertVideoStream(stream);
         })
         .catch(function(error) {
           console.log('Error accessing camera:', error);
@@ -20,3 +20,16 @@ navigator.mediaDevices.enumerateDevices()
   .catch(function(error) {
     console.log('Error enumerating devices:', error);
   });
+
+function invertVideoStream(stream) {
+  var videoTrack = stream.getVideoTracks()[0];
+  var settings = videoTrack.getSettings();
+  settings.transform = [-1, 0, 0, 0, 1, 0, 0, 0, 1]; // Invert x-axis
+
+  var newStream = new MediaStream();
+  var newVideoTrack = videoTrack.clone();
+  newVideoTrack.applyConstraints(settings);
+  newStream.addTrack(newVideoTrack);
+
+  return newStream;
+}
