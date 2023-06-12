@@ -9,19 +9,6 @@ navigator.mediaDevices.enumerateDevices()
         .then(function(stream) {
           var videoElement = document.getElementById('videoElement');
           videoElement.srcObject = stream;
-
-          var track = stream.getVideoTracks()[0];
-          var capabilities = track.getCapabilities();
-          if (capabilities && capabilities.transform) {
-            track.applyConstraints({
-              advanced: [{ transform: 'scaleX(-1)' }]
-            })
-              .catch(function(error) {
-                console.log('Error applying constraints:', error);
-              });
-          } else {
-            console.log('Camera does not support transform.');
-          }
         })
         .catch(function(error) {
           console.log('Error accessing camera:', error);
