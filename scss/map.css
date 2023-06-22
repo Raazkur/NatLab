@@ -1,0 +1,298 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  height: 100%;
+  overflow: hidden;
+  background:url('https://cdn.pixabay.com/photo/2015/10/12/14/59/milky-way-984050_960_720.jpg') #fffcf5;
+}
+
+
+/* HEADER */
+.header-dark {
+  background:rgba(0,0,0,0);
+  background-size: cover;
+  padding-bottom:20px;
+  color: #00b4d8;
+}
+
+@media (min-width:768px) {
+  .header-dark .navbar {
+    padding-top:.75rem;
+    padding-bottom:.75rem;
+  }
+}
+
+@media (min-width: 992px) {
+  .header-dark .navbar.navbar .navbar-nav .nav-link {
+    padding-left:1.2rem;
+    padding-right:1.2rem;
+  }
+}
+
+.header-dark .navbar.navbar-dark .navbar-nav .nav-link:focus, .header-dark .navbar.navbar-dark .navbar-nav .nav-link {
+  color:#00b4d8 !important;
+  background-color:transparent;
+}
+ 
+.header-dark .navbar.navbar-dark .navbar-nav .nav-link:focus, .header-dark .navbar.navbar-dark .navbar-nav .nav-link:hover {
+  color:#94ffc4 !important;
+  background-color:transparent;
+}
+
+.hakan1 {
+  font-size: 90%;
+  font-weight: normal;
+  color: #00b4d8;
+}
+
+.foto {
+  position: relative;
+  width: 200px;
+  height: 200px;
+}
+
+.header-dark .navbar .navbar-nav > li > .dropdown-menu {
+  margin-top:-5px;
+  box-shadow:0 4px 8px rgba(0,0,0,.1);
+  background-color:#fff;
+  border-radius:2px;
+}
+
+@media (min-width:768px) {
+  .header-dark .hero {
+    margin-top:20px;
+  }
+}
+
+.header-dark .hero h1 {
+  color:#94ffc4;
+  font-family:'Bitter', serif;
+  font-size:40px;
+  margin-top:20px;
+  margin-bottom:80px;
+}
+
+@media (min-width:768px) {
+  .header-dark .hero h1 {
+    margin-bottom:50px;
+    line-height:1.5;
+  }
+}
+
+.header-dark .hero .embed-responsive iframe {
+  background-color:#666;
+}
+
+
+/* POP-UP */
+.popup .overlay {
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  width: 100vw;
+  height: 100vh;
+  z-index: 3;
+  display: none;
+}
+
+.popup .content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: #fff;
+  width: 450px;
+  height: 220px;
+  z-index: 2;
+  text-align: center;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.popup .close-bnt {
+  position: absolute;
+  right: 20px;
+  top: 20px;
+  width: 30px;
+  height: 30px;
+  background: #222;
+  color: #fff;
+  font-size: 25px;
+  font-weight: 600;
+  line-height: 30px;
+  text-align: center;
+  border-radius: 50%;
+}
+
+.popup.active .overlay {
+  display: block;
+}
+
+.popup.active .content {
+  transition: all 300ms ease-in-out;
+  transform: translate(-50%, -50%) scale(1);
+}
+
+/* PLATEGROND-IMG */
+.centered-image {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+.centered-image img {
+  max-width: 100%;
+  max-height: 100%;
+}
+
+/* LOCATION IMG */
+.location-icon {
+  position: absolute; 
+  top: 78pt;
+  left: 41.85%;
+  transform: translate(-50%, -50%);
+  width: 30px;
+  height: 43px;
+  background-image: url('../images/locatie.png');
+  background-size: cover;
+  transition: transform 0.3s ease-in-out;
+  z-index: 2;
+}
+
+.location-icon1 {
+  position: absolute; 
+  top: 133pt;
+  left: 45.75%;
+  transform: translate(-50%, -50%);
+  width: 30px;
+  height: 43px;
+  background-image: url('../images/locatie.png');
+  background-size: cover;
+  transition: transform 0.3s ease-in-out;
+  z-index: 2;
+}
+
+.image-container:hover .location-icon1 {
+  transform: translate(-50%, -50%) scale(1.2);
+} 
+
+.location-icon2 {
+  position: absolute; 
+  top: 187pt;
+  left: 43.4%;
+  transform: translate(-50%, -50%);
+  width: 30px;
+  height: 43px;
+  background-image: url('../images/locatie.png');
+  background-size: cover;
+  transition: transform 0.3s ease-in-out;
+  z-index: 2;
+}
+
+.image-container:hover .location-icon2 {
+  transform: translate(-50%, -50%) scale(1.2);
+} 
+
+.location-icon3 {
+  position: absolute; 
+  top: 212pt;
+  left: 47.9%;
+  transform: translate(-50%, -50%);
+  width: 30px;
+  height: 43px;
+  background-image: url('../images/locatie.png');
+  background-size: cover;
+  transition: transform 0.3s ease-in-out;
+  z-index: 2;
+}
+
+.image-container:hover .location-icon3 {
+  transform: translate(-50%, -50%) scale(1.2);
+} 
+
+.location-icon4 {
+  position: absolute; 
+  top: 273pt;
+  left: 43.6%;
+  transform: translate(-50%, -50%);
+  width: 30px;
+  height: 43px;
+  background-image: url('../images/locatie.png');
+  background-size: cover;
+  transition: transform 0.3s ease-in-out;
+  z-index: 2;
+}
+
+.image-container:hover .location-icon4 {
+  transform: translate(-50%, -50%) scale(1.2);
+} 
+
+.location-icon5 {
+  position: absolute; 
+  top: 308pt;
+  left: 52.2%;
+  transform: translate(-50%, -50%);
+  width: 30px;
+  height: 43px;
+  background-image: url('../images/locatie.png');
+  background-size: cover;
+  transition: transform 0.3s ease-in-out;
+  z-index: 2;
+}
+
+.image-container:hover .location-icon5 {
+  transform: translate(-50%, -50%) scale(1.2);
+} 
+
+.location-icon6 {
+  position: absolute; 
+  top: 375pt;
+  left: 54.5%;
+  transform: translate(-50%, -50%);
+  width: 30px;
+  height: 43px;
+  background-image: url('../images/locatie.png');
+  background-size: cover;
+  transition: transform 0.3s ease-in-out;
+  z-index: 2;
+}
+
+.image-container:hover .location-icon6 {
+  transform: translate(-50%, -50%) scale(1.2);
+} 
+
+.location-icon7 {
+  position: absolute; 
+  top: 382pt;
+  left: 59.3%;
+  transform: translate(-50%, -50%);
+  width: 30px;
+  height: 43px;
+  background-image: url('../images/locatie.png');
+  background-size: cover;
+  transition: transform 0.3s ease-in-out;
+  z-index: 2;
+}
+
+.image-container:hover .location-icon7 {
+  transform: translate(-50%, -50%) scale(1.2);
+} 
+
+.image-container {
+  position: relative;
+  width: 100%;
+}
+
+
+.image-container img {
+  position: relative;
+  z-index: 1; 
+}
+
+.image-container:hover .location-icon {
+  transform: translate(-50%, -50%) scale(1.2);
+} 

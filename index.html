@@ -1,32 +1,394 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <link rel="stylesheet" href="style.css">
-    <title>Camera Background Page</title>
-  </head>
-  <body>
-    <div class="header-dark">
-      <nav class="navbar navbar-dark navbar-expand-md navigation-clean-search">
-          <div class="container"><a class="navbar-brand habibi" href="#">Company Name</a><button class="navbar-toggler" data-toggle="collapse" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
-              <div class="collapse navbar-collapse"
-                  id="navcol-1">
-                  <ul class="nav navbar-nav">
-                      <li class="nav-item habibi" role="presentation"><a class="nav-link" href="#">HOME</a></li>
-                      <li class="nav-item" role="presentation"><a class="nav-link" href="#">MAP</a></li>
-                      <li class="nav-item" role="presentation"><a class="nav-link" href="#">CAMERA</a></li>
-                  </ul>
-          </div>
-      </nav>
-  </div>
-    <div id="videoContainer">
-        <video id="videoElement" autoplay></video>
-        <img id="overlayImage" src="Albert.gif" alt="Overlay Image">
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="theme-color" content="#feed01"/>
+<title>NATLAB | NFC</title>
+<meta name="author" content="Themezinho">
+<meta name="description" content="For all kind of exhibition museum website">
+<meta name="keywords" content="wandau, exhibition, museum, art, history, entry, ticket, contemporary, modern, booking, visit, culture, life, centuries, roots, fancy, themezinho">
+
+<!-- SOCIAL MEDIA META -->
+<meta property="og:description" content="Wandau | Art & History Museum">
+<meta property="og:image" content="http://www.themezinho.net/wandau/preview.png">
+<meta property="og:site_name" content="wandau">
+<meta property="og:title" content="wandau">
+<meta property="og:type" content="website">
+<meta property="og:url" content="http://www.themezinho.net/wandau">
+
+<!-- TWITTER META -->
+<meta name="twitter:card" content="summary">
+<meta name="twitter:site" content="@wandau">
+<meta name="twitter:creator" content="@wandau">
+<meta name="twitter:title" content="wandau">
+<meta name="twitter:description" content="Wandau | Art & History Museum">
+<meta name="twitter:image" content="http://www.themezinho.net/wandau/preview.png">
+
+<!-- FAVICON FILES -->
+<link href="ico/apple-touch-icon-144-precomposed.png" rel="apple-touch-icon" sizes="144x144">
+<link href="ico/apple-touch-icon-114-precomposed.png" rel="apple-touch-icon" sizes="114x114">
+<link href="ico/apple-touch-icon-72-precomposed.png" rel="apple-touch-icon" sizes="72x72">
+<link href="ico/apple-touch-icon-57-precomposed.png" rel="apple-touch-icon">
+<link href="ico/favicon.png" rel="shortcut icon">
+
+<!-- CSS FILES -->
+<link rel="stylesheet" href="css/fontawesome.min.css">
+<link rel="stylesheet" href="css/odometer.min.css">
+<link rel="stylesheet" href="css/fancybox.min.css">
+<link rel="stylesheet" href="css/swiper.min.css">
+<link rel="stylesheet" href="css/bootstrap.min.css">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div class="preloader" id="preloader">
+  <svg viewBox="0 0 1920 1080" preserveAspectRatio="none" version="1.1">
+    <path d="M0,0 C305.333333,0 625.333333,0 960,0 C1294.66667,0 1614.66667,0 1920,0 L1920,1080 C1614.66667,1080 1294.66667,1080 960,1080 C625.333333,1080 305.333333,1080 0,1080 L0,0 Z"></path>
+  </svg>
+  <div class="inner">
+    <canvas class="progress-bar" id="progress-bar" width="200" height="200"></canvas>
+    <figure><img src="images/preloader.png" alt="Image"></figure>
+    <small>Loading</small> </div>
+  <!-- end inner -->
+</div>
+<!-- end preloder -->
+<div class="page-transition">
+  <svg viewBox="0 0 1920 1080" preserveAspectRatio="none" version="1.1">
+    <path d="M0,0 C305.333333,0 625.333333,0 960,0 C1294.66667,0 1614.66667,0 1920,0 L1920,1080 C1614.66667,980 1294.66667,930 960,930 C625.333333,930 305.333333,980 0,1080 L0,0 Z"></path>
+  </svg>
+</div>
+<!-- end page-transition -->
+<div class="smooth-scroll">
+  <div class="section-wrapper" data-scroll-section>
+    <div class="search-box">
+      <div class="container">
+        <div class="form">
+          <h3>SEARCH EVENT</h3>
+          <input type="search" placeholder="What are you looking for ?">
+          <input type="submit" value="SEARCH">
+        </div>
+        <!-- end form -->
+        <div class="search-events">
+          <ul>
+            <li>
+              <h5><a href="#">Artemisia Gentileschi talk with Maria</a></h5>
+              <small>15 August – 31 October 2020</small> </li>
+            <li>
+              <h5><a href="#">Artemisia Gentileschi talk with Maria</a></h5>
+              <small>15 August – 31 October 2020</small> </li>
+            <li>
+              <h5><a href="#">Artemisia Gentileschi talk with Maria</a></h5>
+              <small>15 August – 31 October 2020</small> </li>
+          </ul>
+        </div>
+        <!-- end search-events -->
+      </div>
+    </div>
+    <!-- end search-box -->
+    <aside class="side-widget">
+      <svg viewBox="0 0 600 1080" preserveAspectRatio="none" version="1.1">
+        <path d="M540,1080H0V0h540c0,179.85,0,359.7,0,539.54C540,719.7,540,899.85,540,1080z"></path>
+      </svg>
+      <figure class="logo"> <img src="images/natlab.ai" alt="Image"> </figure>
+      <!-- end logo -->
+      <div class="inner">
+        <div class="widget">
+          <figure><img src="images/image07.jpg" alt="Image"></figure>
+          <p>
+            Natlab stands for the Physics Laboratory of Philips. It was established in 1923 on Kastanjelaan in Eindhoven. The laboratory had already been an important initiative for Philips for almost 10 years, where independent researchers developed new patents. The first director was Gilles Holst, who created an academic environment and invited internationally renowned scientists such as Einstein, who visited Natlab in 1923.</p>
+        </div>
+        <!-- end widget -->
+        <div class="widget">
+          <h6 class="widget-title">Opening Hours</h6>
+          <p>Monday ‒ Thursday: 12:00 - 23:30<br>
+            Friday ‒ Sunday: 12:00 - 01:00</p>
+        </div>
+        <!-- end widget -->
+      </div>
+      <!-- end inner -->
+		<div class="display-mobile">
+			<div class="custom-menu">
+        <ul>
+          <li><a href="#">Eng</a></li>
+          <li><a href="#">NL</a></li>
+        </ul>
+      </div>
+      <!-- end custom-menu -->
+      <div class="site-menu">
+        <ul>
+          <li><a href="visit.html" data-scroll-to>Visit</a></li>
+          <li><a href="exhibitions.html" data-scroll-to>Exhibitions</a></li>
+          <li><a href="collections.html" data-scroll-to>Collections</a></li>
+          <li><a href="about.html" data-scroll-to>About</a></li>
+          <li><a href="contact.html" data-scroll-to>Contact</a></li>
+        </ul>
+      </div>
+      <!-- end site-menu -->
+		</div>
+		<!-- end display-mobile -->
+    </aside>
+    <nav class="navbar">
+      <div class="section-title">
+        <figure><img src="images/logo-natlab-1.jpg" alt="Image"></figure>
+              
+        <!-- end logo -->
+        <!-- end site-menu -->
+        <div class="search-button"> <i class="far fa-search"></i> </div>
+        <!-- end search-button -->
+        <div class="hamburger-menu">
+        <svg class="hamburger" width="30" height="30" viewBox="0 0 30 30">
+          <path class="line line-top" d="M0,9h30"/>
+          <path class="line line-center" d="M0,15h30"/>
+          <path class="line line-bottom" d="M0,21h30"/>
+        </svg>
+      </div>
+      <!-- end hamburger-menu -->
+      <div class="navbar-button"> <a href="map.html">GO TO MAP</a> </div>
+      <!-- end navbar-button -->
       </div>
 
-      <div class="content">
-        <h1>Heading</h1>
-        <p>Lorem Ipsum...</p>
+    </nav>
+    <!-- end navbar -->
+    <header class="slider">
+      <div class="swiper-container slider-images">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide" data-background="images/IMG_0033_natlab.png">
+			<div class="mobile-slide" data-background="images/slide-mobile01.jpg"></div>
+			</div>
+          <div class="swiper-slide" data-background="images/IMG_0033_natlab.pn">
+			<div class="mobile-slide" data-background="images/slide-mobile01.jpg"></div>
+			</div>
+          <div class="swiper-slide" data-background="images/IMG_0033_natlab.pn">
+			<div class="mobile-slide" data-background="images/slide-mobile01.jpg"></div>
+			</div>
+        </div>
+        <!-- end swiper-wrapper -->
+
+        <!-- end slider-nav -->
       </div>
-  </body>
-  <script src="main.js"></script>
+      <!-- end slider-images -->
+      <div class="swiper-container slider-texts">
+        <svg width="580" height="400" class="svg-morph">
+          <path id="svg_morph" d="m261,30.4375c0,0 114,6 151,75c37,69 37,174 6,206.5625c-31,32.5625 -138,11.4375 -196,-19.5625c-58,-31 -86,-62 -90,-134.4375c12,-136.5625 92,-126.5625 129,-127.5625z" />
+        </svg>
+        <div class="swiper-wrapper">
+          <div class="swiper-slide">
+            <div class="container-fluid">
+              <h1>HISTORY NATLAB </h1>
+              <p>Explore different locations and find out more about the
+                historic <br>
+                places across the NATLAB building.</p>
+            </div>
+            <!-- end container -->
+          </div>
+          <!-- end swiper-slide -->
+          <div class="swiper-slide">
+            <div class="container-fluid">
+              <h1>NFC TAGS</h1>
+              <p>Scan the tag with your phone and get more to know about the building</p>
+            </div>
+            <!-- end container -->
+          </div>
+          <!-- end swiper-slide -->
+          <div class="swiper-slide">
+            <div class="container-fluid">
+              <h1>HISTORY NATLAB </h1>
+              <p>Explore different locations and find out more about the
+                history.</p>
+            </div>
+            <!-- end container -->
+          </div>
+          <!-- end swiper-slide -->
+        </div>
+        <!-- end swiper-wrapper -->
+      </div>
+      <!-- end slider-texts -->
+    
+    </header>
+    <!-- end slider -->
+    <section class="content-section" data-background="#fffbf7">
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-12">
+            <div class="section-title text-center">
+              <figure><img src="images/logo-natlab-1.jpg" alt="Image"></figure>
+              <h2>A BUILDING WITH HISTORY</h2>
+            </div>
+            <!-- end section-title -->
+          </div>
+          <!-- end col-12 -->
+          <div class="col-lg-7">
+            <figure class="image-box" data-scroll data-scroll-speed="-1" > <img src="images/einstein.jpg" alt="Image"> </figure>
+          </div>
+          <!-- end col-7 -->
+          <div class="col-lg-5">
+            <div class="side-icon-list right-side">
+              <ul>
+                <li>
+                  <figure> <img src="images/icon01.png" alt="Image"> </figure>
+                  <div class="content">
+                    <h5>Opening</h5>
+                    <p>From 22 July<br>
+                      Monday ‒ Thursday: 12:00 - 23:30<br>
+                      Friday ‒ Sunday: 12:00 - 01:00</p>
+                  </div>
+                  <!-- end content -->
+                </li>
+                <li>
+                  <figure> <img src="images/icon02.png" alt="Image"> </figure>
+                  <div class="content">
+                    <h5>Hologram</h5>
+                    <p>Experience the history through holograms</p>
+                  <!-- end content -->
+                </li>
+                <li>
+                  <figure> <img src="images/icon03.png" alt="Image"> </figure>
+                  <div class="content">
+                    <h5>Where You Visit</h5>
+                    <p>Kastanjelaan 500
+                      5616 LZ Eindhoven</p>
+                  </div>
+                  <!-- end content -->
+                </li>
+              </ul>
+            </div>
+            <!-- end side-icon-list -->
+          </div>
+          <!-- end col-5 -->
+        </div>
+        <!-- end row -->
+      </div>
+      <!-- end container -->
+    </section>
+    <!-- end content-section -->
+    <section class="content-section">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-lg-9">
+            <div class="section-title">
+              <figure><img src="images/logo-natlab-1.jpg" alt="Image"></figure>
+              <h6>DON’T FORGET TO SCAN</h6>
+              <h2>NFC LOCATIONS</h2>
+            </div>
+            <!-- end section-title -->
+          </div>
+          <!-- end col-9 -->
+          <div class="col-lg-3"> <a href="map.html" class="circle-button">GO TO THE MAP</a> </div>
+          <!-- end col-3 -->
+        </div>
+        <!-- end row -->
+        <div class="row justify-content-center">
+          <div class="col-lg-4 col-md-6">
+            <div class="exhibition-box" data-scroll data-scroll-speed="-1" >
+              <figure> <a href="#"><img src="images/1.jpg" alt="Image" class="img"></a>
+                <div class="info">
+                  <figure class="i"><img src="images/icon-info.png" alt="Image"></figure>
+                  <span>Scan the tag with your phone</span> </div>
+                <!-- end info -->
+              </figure>
+              <div class="content-box">
+                <h4><a href="#">natlab history photos</a></h4>
+                <p> 15 August – 31 October 1940 </p>
+              </div>
+              <!-- end content-box -->
+            </div>
+            <!-- end exhibition-box -->
+          </div>
+          <!-- end col-4 -->
+          <div class="col-lg-4 col-md-6">
+            <div class="exhibition-box" data-scroll data-scroll-speed="1">
+              <figure> <a href="#"><img src="images/2.jpg" alt="Image" class="img"></a>
+                <div class="info">
+                  <figure class="i"><img src="images/icon-info.png" alt="Image"></figure>
+                  <span>Scan the tag with your phone</span> </div>
+                <!-- end info -->
+              </figure>
+              <div class="content-box">
+                <h4><a href="#">natlab history photos</a></h4>
+                <p> 22 Oct 2020 - 21 Feb 1940</p>
+              </div>
+              <!-- end content-box -->
+            </div>
+            <!-- end exhibition-box --> </div>
+          <!-- end col-4 -->
+          <div class="col-lg-4 col-md-6">
+            <div class="exhibition-box" data-scroll data-scroll-speed="-0.5" >
+              <figure> <a href="#"><img src="images/3.jpg" alt="Image" class="img"></a>
+                <div class="info">
+                  <figure class="i"><img src="images/icon-info.png" alt="Image"></figure>
+                  <span>Scan the tag with your phone</span> </div>
+                <!-- end info -->
+              </figure>
+              <div class="content-box">
+                <h4><a href="#">natlab history photos</a></h4>
+                <p> 22 Apr 2023 - 22 Aug 1940</p>
+              </div>
+              <!-- end content-box -->
+            </div>
+            <!-- end exhibition-box --></div>
+          <!-- end col-4 -->
+          <div class="col-12 text-center"> <a href="exhibitions.html" class="custom-button">VIEW ALL LOCATIONS</a> </div>
+          <!-- end col-12 -->
+        </div>
+        <!-- end row -->
+      </div>
+      <!-- end container -->
+    </section>
+    <!-- end content-section -->
+
+    <!-- end content-section -->
+    <footer class="footer">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-4 col-md-6">
+            <h6 class="widget-title">About NATLAB</h6>
+            <ul class="footer-menu">
+              <li><a href="#">About us </a></li>
+              <li><a href="#">Contact us</a></li>
+              <li><a href="#">National work</a></li>
+              <li><a href="#">International work</a></li>
+            </ul>
+          </div>
+          <!-- end col-4 -->
+          <div class="col-lg-4 col-md-6">
+            <h6 class="widget-title">Connect Us</h6>
+            <ul class="social-media">
+              <li><a href="#"><i class="fab fa-facebook-f"></i> /NATLAB</a></li>
+              <li><a href="#"><i class="fab fa-twitter"></i> /NATLAB</a></li>
+              <li><a href="#"><i class="fab fa-youtube"></i> /NATLAB</a></li>
+            </ul>
+          </div>
+          <!-- end col-4 -->
+          <div class="col-lg-4">
+            <h6 class="widget-title">Visit Us Now</h6>
+            <address class="address">
+              Kastanjelaan 500
+              5616 LZ Eindhoven <strong>Netherlands - Eindhoven</strong> <i class="fas fa-info-circle"></i> 040 294 68 42
+            </address>
+          </div>
+          <!-- end col-4 -->
+        </div>
+        <!-- end row -->
+      </div>
+      <!-- end container -->
+      <div class="footer-bottom">
+        <div class="container"> <span class="copyright">© 2023 NATLAB</span> </div>
+        <!-- end container -->
+      </div>
+      <!-- end footer-bottom -->
+    </footer>
+    <!-- end footer -->
+  </div>
+</div>
+
+<!-- JS FILES -->
+<script src="js/jquery.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/locomotive-scroll.min.js"></script>
+<script src="js/kinetic-slider.js"></script>
+<script src="js/fancybox.min.js"></script>
+<script src="js/odometer.min.js"></script>
+<script src="js/swiper.min.js"></script>
+<script src="js/scripts.js"></script>
+</body>
 </html>
